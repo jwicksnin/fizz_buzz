@@ -1,29 +1,12 @@
-var Num = function(number, word) {
+var all = [{num:7, word:"sivv"}, {num:3, word:"thrill"}, {num:11, word:"maybe"}, {num:4, word:"ouch"}];
 
-    var numnum = {
-    number: number,
-    word: word
-
-    };
-    return numnum;
-};
-
-
-var next = new Num(7, "Sivv");
-console.log(next);
-
-var fizzybuzzy = function(obj) {
-
-    for (var i = 0; i <= 30; i++) {
+var fizzybuzzy = function(arr, limit) {
+    for (var i = 0; i <= limit; i++) {
         var output = '';
-        if (i % 3 === 0) {
-            output += 'fizz';
-        }
-        if (i % 5 === 0) {
-            output += 'buzz';
-        }
-        if (i % obj.number === 0) {
-            output += 'sivv';
+        for (var j = 0; j < arr.length; j++) {
+            if (i % arr[j].num === 0) {
+                output += arr[j].word;
+            }
         }
         if (output !== '') {
             console.log(output);
@@ -33,4 +16,4 @@ var fizzybuzzy = function(obj) {
     }
 };
 
-fizzybuzzy(next);
+fizzybuzzy(all, 50);
